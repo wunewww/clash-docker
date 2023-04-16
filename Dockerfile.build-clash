@@ -1,0 +1,5 @@
+FROM golang:1.20.3-bullseye AS build-clash
+
+RUN git clone https://github.com/Dreamacro/clash.git
+
+RUN cd clash && make linux-amd64 
