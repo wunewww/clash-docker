@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clashtools"
+version = "0.1.0"
+description = "A tool set used for configure clash -- a efficent tunnel in Go"
+authors = [
+    {name = "Niu Zhaolong", email = "wuniu@riseup.net"}
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+PyYAML = "^5.3"
+requests = "^2.25"

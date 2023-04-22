@@ -3,12 +3,8 @@ services:
     # clash-docker
     image: clash-docker
     container_name: test-clash
-    volumes:
-      - ~/clash-test-config:/config
     ports:
-      - "8088:8080"
-      - "1085:1080"
-      - "9091:9090"
+      - 7890:7890
 
     restart: unless-stopped
     network_mode: "bridge"

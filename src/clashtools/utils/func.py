@@ -7,9 +7,8 @@ Define some useful functions to configure clash
 import json
 import re
 from urllib.parse import unquote, urlparse, parse_qs
-from ipaddress import IPv4Address, IPv6Address, AddressValueError
+from ipaddress import IPv4Network, IPv6Network, AddressValueError
 import base64
-import os
 import logging
 
 import yaml
@@ -34,11 +33,11 @@ def write_yaml(path: str, dct: dict) -> None:
         yaml.dump(dct, f)
     logging.debug(f"Write to {path} successfully.")
     
-def get_url(g_url: str, proxy: dict = None) -> str:
+def get_url(g_url: str) -> str:
     '''
     get_url: get string content from t_url
     '''
-    c = r.get(url=g_url, proxies=proxy)
+    c = r.get(url=g_url)
     logging.info(f"GET {g_url} successfully.")
     return c
 
@@ -66,12 +65,12 @@ def decode_base64(s: str) -> str:
     '''
     return base64.b64decode(s).decode('utf-8')
 
-def get_subscriptions(l: str, proxy: dict = None) -> str:
+def get_subscriptions(l: str) -> str:
     '''
     GET str, return a list of subs (link)
     '''
     logging.debug("Start getting the subscriptions.")
-    c64 = get_url(g_url=l, proxy=proxy)
+    c64 = get_url(g_url=l)
     logging.debug(f'get content:{c64.text}')
     c = decode_base64(c64.text)
     return c
@@ -90,11 +89,11 @@ def parse_clash_subformat(s: str) -> dict:
         "name": pr.fragment
     }
 
-def generate_proxies(url: str, proxy: dict = None) -> list:
+def generate_proxies(url: str) -> list:
     '''
     get the decoded proxies link
     '''
-    content= get_subscriptions(url, proxy).split()
+    content= get_subscriptions(url).split()
     return [parse_clash_subformat(i) for i in content]
 
 def broke_wildcard(i: str) -> set:
@@ -107,11 +106,11 @@ def broke_wildcard(i: str) -> set:
     if if_wildcard:
         return [if_wildcard.group(1), 'suffix']
     try:
-        IPv4Address(i)
+        IPv4Network(i)
         return [i, 'ipv4']
     except AddressValueError:
         try:
-            IPv6Address(i)
+            IPv6Network(i)
             return [i, 'ipv6']
         except AddressValueError:
             return [i, 'domain']

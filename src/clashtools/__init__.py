@@ -6,7 +6,6 @@ The package include several useful functions and variables
 for configuring clash.
 '''
 import os
+from .utils.generate import *
 
-SUB_URL = os.environ['SUB_URL']
-CONF_PATH = '.'
-SUB_PROXY = os.environ.get('SUB_PROXY', None)
+__all__ = ['generate']

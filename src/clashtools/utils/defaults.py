@@ -36,3 +36,4 @@ L_CNCIDR = ['https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/
 L_APPLICATIONS = ['https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt', 'DIRECT']
 
 POSITIVE = [L_PRIVATE, L_REJECT, L_ICLOUD, L_APPLE, L_GOOGLE, L_PROXY, L_DIRECT, L_LANCIDR, L_CNCIDR, L_TELEGRAMCIDR]
+NEGATIVE = [L_PRIVATE, L_REJECT, L_TLD_NOT_CN, L_GFW, L_GREATFIRE, L_TELEGRAMCIDR]
