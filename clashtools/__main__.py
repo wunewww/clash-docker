@@ -15,7 +15,7 @@ if __name__ == '__main__':
     parser.add_argument('--url', nargs=1)
     parser.add_argument('--path', nargs=1)
     args = parser.parse_args()
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.INFO)
     configuration = generate_conf(args.url[0])
     with open(args.path[0], 'w') as f:
         dump(configuration, f, encoding='utf-8', allow_unicode=True)

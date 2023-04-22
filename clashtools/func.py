@@ -48,7 +48,7 @@ def put_url(p_url: str, obj: dict, q: dict = None) -> None:
     c = r.put(p_url, data=json.dumps(obj), params=q)
 
     c.raise_for_status()
-    logging.debug(f"PUT data to {p_url} successfully.")
+    logging.info(f"PUT data to {p_url} successfully.")
 
 def patch_url(p_url: str, obj: dict) -> None:
     '''
@@ -57,7 +57,7 @@ def patch_url(p_url: str, obj: dict) -> None:
     c = r.patch(p_url, data=json.dumps(obj))
     
     c.raise_for_status()
-    logging.debug(f"PATCH data to {p_url} successfully.")
+    logging.info(f"PATCH data to {p_url} successfully.")
 
 def decode_base64(s: str) -> str:
     '''
@@ -69,7 +69,7 @@ def get_subscriptions(l: str) -> str:
     '''
     GET str, return a list of subs (link)
     '''
-    logging.debug("Start getting the subscriptions.")
+    logging.info("Start getting the subscriptions.")
     c64 = get_url(g_url=l)
     logging.debug(f'get content:{c64.text}')
     c = decode_base64(c64.text)

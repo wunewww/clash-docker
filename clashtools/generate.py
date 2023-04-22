@@ -5,11 +5,13 @@ generate.py
 This file contains functions generate conf
 '''
 from .defaults import CONF_TEMPLATE, POSITIVE, NEGATIVE
-from .func import generate_proxies, get_url, broke_wildcard
+from .func import generate_proxies, get_url, broke_wildcard, put_url
 import yaml
+import logging
 
 def generate_conf(url: str, positive=True):
     conf = CONF_TEMPLATE
+    logging.info("Start fetch subscriptions.")
     proxies = generate_proxies(url)
     conf.update({'proxies': proxies})
     proxy_names = [j['name'] for j in proxies]
@@ -41,6 +43,7 @@ def generate_conf(url: str, positive=True):
     return conf
 
 def generate_rules(url_r: list) -> list:
+    logging.info('Start fetching rule set.')
     t = get_url(url_r[0])
     y = yaml.load(t.text, Loader=yaml.SafeLoader)
     result = []
@@ -59,3 +62,8 @@ def generate_rules(url_r: list) -> list:
             rule = 'IP-CIDR6'
             result.append(f'{rule},{broken_down[0]},{url_r[1]},no-resolve')
     return result
+
+def reload_clash(url: str, path: str) -> None:
+    loads = { 'path': path }
+    res = put_url(url, loads)
+    res.raise_for_status()
