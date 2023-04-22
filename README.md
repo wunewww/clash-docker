@@ -18,13 +18,13 @@ After the config.yaml has been generated, you could add your rules to it.
 
 ## Issues
 
-[*] Rules are re-fetched every time the container starts
-[*] An external config solution should be added **(But it need to be easier.)**
-[] Currently only supports the url-test proxy group type
-[] A filter is needed as some subscription links are invalid
-[] Only supports Trojan links
-[*] The clashtools package cannot be installed for some reason (There is no need for doing this.)
-[] The code needs refactoring
+- [*] Rules are re-fetched every time the container starts
+- [*] An external config solution should be added **(But it need to be easier.)**
+- [] Currently only supports the url-test proxy group type
+- [] A filter is needed as some subscription links are invalid
+- [] Only supports Trojan links
+- [*] The clashtools package cannot be installed for some reason (There is no need for doing this.)
+- [] The code needs refactoring
 
 ## Author
 
