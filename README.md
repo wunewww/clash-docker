@@ -18,7 +18,9 @@ Replace `<your_sub_link` with your subscription link (which returns aset of **ba
 **Trojan** links). It is also recommended to set `-v <path_to_dir>:/configs and replace `<path_to_dir>` 
 with a local path to store the generated clash config to enable to change the clash config manually later.
 
-Container will fetch rules from @Loyalsoldier/clash-rules and adds the converted rules to config.yaml conbined with the subscripted trojan links and some pre-defined settings.Container won't fetch the rules once the config.yaml have been generated.
+The container will fetch rules from [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) converts them for Clash, and combines them with your subscription Trojan links and default settings in `config.yaml`. 
+
+Container won't fetch the rules once the config.yaml have been generated.
 
 Also, the project can be built locally hereafter.
 
@@ -30,7 +32,7 @@ docker run -e SUB_URL=<your_sub_link> -p 7890:7890 -v <path_to_dir>:/configs cla
 
 This will build Clash locally (for AMD64), then run a Docker container.
 The container will automatically fetch [Clash rules](https://github.com/Loyalsoldier/clash-rules),
-adapt the rules for Clash (GPL version), and run Clash on port 7890.
+adapt the rules for Clash (GPL version), and run Clash at port 7890.
 
 After the config.yaml has been generated, you could add your rules to it.
 
