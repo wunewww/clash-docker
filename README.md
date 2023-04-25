@@ -15,7 +15,7 @@ docker run -e SUB_URL=<your_sub_link> -p 7890:7890 -v <path_to_dir>:/configs wun
 ```
 
 Replace `<your_sub_link` with your subscription link (which returns aset of **base64-encoded**
-**Trojan** links). It is also recommended to set `-v <path_to_dir>:/configs and replace `<path_to_dir>` 
+**Trojan** links). It is also recommended to set `-v <path_to_dir>:/configs` and replace `<path_to_dir>` 
 with a local path to store the generated clash config to enable to change the clash config manually later.
 
 The container will fetch rules from [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) converts them for Clash, and combines them with your subscription Trojan links and default settings in `config.yaml`. 
