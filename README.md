@@ -45,5 +45,4 @@ After the config.yaml has been generated, you could add your rules to it.
 - [ ] The code needs refactoring
 
 ## Author
-
-Niu Zhaolong <wuniu@riseup.net>
+Wunewww <wuniu@riseup.net>
