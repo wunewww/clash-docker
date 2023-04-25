@@ -1,6 +1,6 @@
 # clash-docker
 
-Running Clash for Docker with configuration tools. Convert [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) to clash (GPL version) conpatible.
+Running Clash for Docker with configuration tools. Convert [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) to clash (GPL version) compatible.
 
 **The configuration script is seriously primitive for now.** For my own usage habits, this could only accepts trojan links from subscription.
 It will set all the proxies in to a single proxy group with method `url-test`. The config.yaml shall be reconfigured
