@@ -1,17 +1,2 @@
-backcall==0.2.0
-build==0.10.0
-clashtools @ file:///home/wuniu/clash-docker/clashtools
-decorator==4.4.2
-ipython==7.20.0
-ipython_genutils==0.2.0
-jedi==0.18.0
-packaging==23.1
-parso==0.8.1
-pexpect==4.8.0
-pickleshare==0.7.5
-prompt-toolkit==3.0.14
-Pygments==2.7.1
-pyproject_hooks==1.0.0
-tomli==2.0.1
-traitlets==5.0.5
-wcwidth==0.1.9
+PyYAML==6.0
+requests==2.31.0
